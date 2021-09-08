@@ -1,0 +1,248 @@
+
+# Layout 8.4.1
+# 1) Solenoids around Gun got correct Baugruppe (WFG and WFB)
+# 2) Quadrupole in Injector spectrometer arm (S10BD01) changed to QFA type
+# 3) Change Baugruppe of DHVS (Slit) to DHVS-SLIT
+# 4) Apply Changes from Lothas Schult and Adriano Zandonello (email: 21.7.2014)
+# 5) Cameras in Athos line have only their vacuum part installed except for one camera which is an overview camera
+# 6) Change moving vacuum parts (e.g. collimator) to diagnostics group
+# 7) Move Wire Scanner into Linac 3 cells 1,5,9, and 13 to separate from collimator in Linac 3
+# 8) BAMs before Injector BC and in Athos line are not fully equiped and only the pick up (vacuum parts) is installed
+# 9) Beam stopper after linac bunch compressor changed to type AFBC1 with corrector coil
+# 10) AFDL is now 1 m long and has no tilted pole faces
+# 11) Cameras in the photon beamline after the dump dipole are of type Overview
+# 12) Snchrotron radiation port DSRP changed to DSRM (Synchrotron radiation monitor) and DBCM (Bunch compression monitor)
+# 13) Added a synchrotron radiation monitor port after the first dipole of SATCL01
+# 14) Added two coherent diffraction radiation ports (vacuum components only)
+
+# Layout 8.5.1
+# 1) Apply changes from Lothar Schulz (email 20.8.2014)
+# 2) Dumps and Stopper are in the Safety group
+# 3) Adjusted ALignment Ports and Outcoupling Ports for BC1 and 2. Effective Length set to 0 cm but reserved length is 10 cm (email A. Zandonella 14.8.2014)
+# 4) Removed Coherent Diffraction Radiator because position and usefulness is not clear
+
+# Layout 8.5.2
+# 1) Added Alignment LAser Ports in Athos and Aramis.
+# 2) Changed section layout of beam dumps. The spectrometer dipole now belongs to the straight ahead section, e.g. SARBD01
+# 3) Final Screens in SARBD01/SATBD01 are of type OV38 (changed from OV16)
+
+# Layout 8.6.1
+# 1) Implementation of multiple beamlines (Phase 1 and Phase 2)
+# 2) Removal of various parts in Athos Switchyard for Phase 1 (e.g. Vert Collimator, SRM, BCM)
+# 3) Self/Seeding Chicane of Aramis is now Phase 2. In Phase 1 the section is instrumented with an Undulator module
+# 4) Change of the Sextupoles in BC2 10 mm upstream for the first and downstream for the second (email F. Loehl 17.10)
+# 5) Indexing of SATUN22 now consistant with other undulator cells
+# 6) Added the chicane information and branching point (moved from SwissFELmagnets.py)
+# 7) Branching dipoles have now the addition key 'branch' set to true
+# 8) Chicanes magnets have now the common field entry 'BC' to mark them into a group
+# 9) Move BAMs in SARBD01 and SATDI01 according to email by R. Ganter 16.1.2015
+# 10) Move WSC from S10MA01 to S20CB01
+# 11) Move Last camera in S10MA01 30cm upstream (email. Bruno Zandonella, 5.2.15)
+# 12) New Position of CDR (vacuum only thus phase 2) according to email by Bruno Zandonella, 10.2.15)
+
+# Layout 8.7.1
+# 1) Change that OMLayout is alwazs delivering one set of beamlines. With a argument in the access function build the routine
+#    can implement alternative designs
+# 2) Change SINEG01.MCOR220 from type SFDD to SFD1
+# 3) Complete new redistributions of ICTs according to DCR50 (email M. Pedrozzi, 28.4.2015)
+# 4) Correcting a 200 micron longitudinal offset for S20SY02-MBND200
+# 5) Changing BAMs after Aramis and Athos to type DBAM-FS8 (formerly DBAM-FS16). Email: R. Ganter 2.6.15
+# 6) Applying changes from layout optimization (email. A. Zandonella 3.6.15)
+# 7) Correcting the residual transverse offset of a few nanometer in the Aramis undulator line
+# 8) Changing the Wirescanner in SARUN20 to type 38mm vacuum chamber
+# 9) Applying changes from A. Zandonella (email: 26.6.2015) e.g. shift of energy collimator 20 cm down stream
+
+# Layout 8.8.1
+# 1) Adjust the element in the gun section SINEG01-####190, 20 and 210 in position to get space for faraday cup
+# 2) Add faraday cup as SINEG01-DFCP185
+# 3) Coherent Diffraction radiation monitor DCDR are now implemented in phase 1
+# 4) Adjust TAU Monitor Position according to change in Holy List (Report from Website on 9.11.2015)
+# 5) Add vertical mover with slits into cxollimator section SARCL02-DSFV282
+# 6) Adding shielding element SLOS in the Front End of Aramis
+
+# Layout 9.0.1
+# 1) Define new Athos layout with shorter undulator modules and period length of 38 mm
+# 2) Define Laser acceleration in Phase 1 (Injector and Athos Switchyard)
+# 3) Add Slits in Athos Switchyard for slicing at SATSY01 for phase 2
+# 4) Add Gun Laser incoupling port
+# 5) Rename Aramis and Athos radiation Shielding
+# 6) Change Athos spectrometer magnet to same type as Aramis
+# 7) Add Camera in SATCL01 for phase 1
+# 8) adjust position of ICTs in SARBD01 and SARMA01 according to email by Zandonella 1.3.16)
+# 9) changed last decirper to two individual ones of 1 meter length for horizontal and vertical plane. Responsibility is now in the undulator group.
+# 10) Some wire scanners have a new Baugruppe, indicating an additional AL foil for beam loss measurements.
+# 11) Adjusting second RF cavity in SINSB03 and SINSB04 according to email by Alessandro Citterio 2.3.16
+
+# Layout 9.0.2 (email: Adriano 4.7.2016)
+# 1) Correct the Baugruppen of the Lasser Acceleration Box
+# 2) Correct the WSC with AL foil in SINDI01 and s10DI01
+# 3) Shift WSC in SARUN20 downstream by 30 mm for phase 1
+# 4) Correct the assignment of the 1m dechirper to insertion device group
+
+
+# Layout 9.1.1
+# 1) Repositioning the ICTs in SARBD01 and SARMA01 (see point 8 of 9.0.1)
+# 2) Adjust length of laser acceleration chamber and shift to new position (email by Silke Pfinninger, 18.8.2016)
+# 3) SATCB01 and SATCB02 have no elements in phase 1 (BPMs and Quads removed)
+# 4) Adjust elements around Athos dump (email by Silke Pfinninger, 18.8.2016)
+# 5) Add first design of post undulator TDS (email. E. Prat, 20.7.16)
+# 6) Removal of C-Band TDS in Athos line
+
+# Layout 9.2.1
+# 1) Correct the spacing in SATUN01-SATUN05 for having the same periodicity as the following sections
+# 2) Shift X-bad TDS downstream to allocate space for possible ACHIP experiment.
+
+# Layout 9.3.1
+# 1) Eliminate BC alignment ports DALA150 in both bunch compressors
+# 2) Move OFC quadrupole for the gun spectrometer at position z=1.6653 and new index 212 (before 310)
+# 3) ACHIP Chamber in SATSY03 is now installed from phase 1 on.
+# 4) Wirescanner in SARUN20 in all phases changed to type C8 type
+# 5) Position correction of SARBD01-DICT030, SARMA01-DICT090 and SARUN20-DWSC010
+# 6) correct position of X-band deflector to avoid conflict of overlap
+# 7) Move dechirper into Athos straight section. 2m elements into formerly SATCB02 now SATCL01, 1 m long elements into the space of the former C-band deflector in SATDI01 and one 2 m element before SATCB01
+# 8) Camera before Athos beam stopper is now HR in final phase
+# 9) Replace QFD at SATSY01-MQUA020/280 with QFM + Corrector magnets
+# 10) Remove two ICTs and one BAM from Athos beam line for the final phase
+# 11) Moved SFUE correctors 3 mm away from undulator (email A. Zandonella from 20.12.2016)
+# 12) Added ICT back into SATDI01
+# 13) Correction according to vacuum group (email. S.Pfinninger, 30.1.)
+# 14) Adding Wirescanner in SATBD01
+# 15) Adding Wirescanner in SATSY03 (emal. A.Zandonella, 20.1.2017)
+# 16) Correction of various position in Phase 1 (email. A. Zandonella: 19.1.2017)
+
+# Layout 9.3.2
+# 1) Applied some fine correction (email A. Zandonella, 8.2.2017)
+
+# Layout 10.0.1
+# 1) Omitting phase 1. Now only the final phase is given for elements where funding exists.
+# 2) New Layout for chicane for two color operation in Athos and Aramis.
+# 3) Chicane magnets AFSS are 30 cm long now (formerly 36 cm)
+# 4) change index of SATDI wirescanner to 65
+
+# Layout 10.1.1
+# 1) Reintroducing different phases: alt=0 is current state, alt=1 is a near future state/possible modification, alt=2 is the final layout
+# 2) Change correctors from SINLH03-DQUA040/080 to 030/060
+# 3) Change naming of permanent and skew magnets: MQUA->MQUP, MBND -> MBNP and MQUA -> MQSK
+# 4) Move two color chicane in ARAMIS from SARUN08 to SARUN09
+# 5) Change number of correctors of UE38 from 1 to 2
+# 6) Add some fine correction in the ATHOS undulator cells and tow color chicane positions
+
+# Layout 10.1.2
+# Synchronization of the holy list with Adriano/Hubert (email 4.6.18)
+# 1) Change energy collimator from DCOL to VCOL
+# 2) Temporary installation of the variable gap dechirper in SINSB05 with some change in quadrupole and BPM position in SINSB05 and SINSB04
+# 3) Correction of the beam stopper dump in SATBD01, which should be after the permanent dipole magnet (index change from 205 to 305)
+# 4) Reduce number of X-band deflector station to one, and shift it (and space for the other) by 22 cm against the beam (upstream): email R. Ganter 23.1.18 and confirmation by  D. Hauenstein
+# 5) Place 6 dechirper into Athos line, 4 in the SATCL02 section and 2 more in SATMA01
+
+# Layout 10.1.3
+# 1) Remove SATDI01-MQUA310 and SATDI-DBPM320 to SATDI01-MQUA300 and SAT-DBPM310
+# 2) Take out Athos ACHIP Box in current version (alt=0)
+
+# Layout 10.2.1
+# 1) Moving planned layout (alt=1) to current
+# 2) Move first QFM magnet in SATSY01 35 mm upstream
+# 3) Correct for wrong calculation of the SINSB04 cell
+# 4) Enables the ict in SATDI01-DICT020 for all phases
+# 5) Added Athos ACHIP in 'Phase planned' (installation november shutdown 2018)
+# 6) added two slit dechirper in SARUN16 (finanzed by CROSS proposal)
+# 7) Move of SINDI01-DSCR080, replacing SINDI02-MQUA070
+# 8) Move of SINLH03 screen to SINSB05 after the dechirper
+# 9) Correct septum length from 1 m to 0.76 m
+
+# Layout 10.2.2
+# 1) pushed the two screen changes and ACHIP box from planned to current
+# 2) Fine correction of the changed screen of change in 10.2.1 according to D. Hauensteins email (28.11)
+# 3) Changes of BPM position in SATMA02 (email D>Hauenstein 28.11)
+# 4) Added a C16 BAM to Athos in SATBD01
+# 5) Placed X-band deflector in Athos in new section SATXB01
+
+# Layout 10.2.3
+# 1) Screen SINLH03-DSCR070 removed in phase current since it was move to SINSB05
+# 2) Change correct length of 8 mm BAM to 100 mm
+# 3) Replace BAM in SAT from 16 mm to 8 mm
+# 4) Correct dechirper position in Athos according to input from Silke Pfiffinger
+# 5) Correct Wire Scanner Position in final phase in SARUN09
+# 6) Moved dechirpers after Aramis undulator from SARUN16 to SARUN18 after input from E. PRat
+# 7) Added dechirpers from CROSS proposal in S30CB15
+# 8) Possition changes of sextupoles and wirescanner in SARCL02 according to email D. Hauenstein 26.3
+# 9) First implementation of seeding for the HERO project. This applies mostly to a reconfiguration of SATDI01 and the addition of a second two color chicane in SATUN05
+
+# Layout 10.3.1
+# 1) Moved final layout of Athos into planned layout
+# 2) Included in the final layout of Athos HERO and EEHG first iteration.
+# 3) Renamed XBAND cavity in Athos back to section SARMA02 (email by Romain, April 19)
+# 4) Change in Dechirper position in SARUN18 (email D. HAuenstein 17th April 19)
+
+# Layout 10.3.2
+# 1) Add Athos beam dump SATBD02 to all phases
+# 2) Verschiebung der Dechirper in S30CB15 (email. S. Pfinninger, 14.10.19)
+# 3) Verschiebung der TDS in SATMA02 by 6 cm downstream (email. S. Pfinninger, 14.10.19)
+# 4) Verschiebung des BAMS in SATBD01 by a small margin upstream (email. S. Pfinninger, 14.10.19)
+# 5) Change Dipole type in the large EEHG chicane to AFBC3 to get maximum R56 of 12 mm for an angle of 2.3 degree
+# 6) Added a power supply channel to the Athos CHIC-chicanes.
+# 7) The phase final of SATDI01 will be copied over to phase planned
+# 8) In the current phase there will be only 4 Athos undulator modules installed
+# 9) Increase apeture from the large Athos chicane to the end of the modulator to 16 mm (before the undulator) and 8 mm after before going back to 5 mm.
+# 10) Removed last sextupole in SATCL01 and moved DALA upstream
+# 11) Move the periodic lattice after Athos stopper by 50 cm downstream and compensate for shorter triplet structures.
+# 12) Second dechirper girder in SATCL02 moved into 'phase current', first in SATCL02 and the one in SATMA01 in 'phase planned'
+# 13) Dechirper in SARUN18 comes in 'phase current'
+# 14) phase current: LAst 4 Undulators and phase shifter, 'phase planned' last 8 undulators but all phase shifter in SATUN
+# 15) X-Band TCAV only in phase planned and higher.
+# 16) Shift of BMP sin S20SY03 and the placement of a screen, latter only from phase planned on
+# 17) Remove SATDI01-DWSC290 out of phase current and planed (email R. Ganter 29.10.2019)
+
+# Layout 10.4.2
+# 1) Adding undulator SATUN12 to SATUN18 up till sep 2020
+# 2) Adding back again the second RF structure for the X-band deflector in Athos
+# 3) Adding CDR Monitor in SATSY02 for 'phase final'
+# 4) Adding CDR Monitor in S20SY03 for 'phase final'
+# 5) Adding BPM and Quadrupole before SATCL02-UDCP300
+# 6) Adding Dechirper in SATMA02
+# 7) Increase number of periods of bother modulator from 8 to 9
+# 8) Increase length of EEHG chicane in SAT by 4 cm (last dipole shifts by 4 cm, the inner by 2 cm)
+# 9) Change order of BPMs and Quads around EEHG chicane to allow for the vacuum chamber and 9 period modulator
+# 10) Reduced spacing of 3 quadrupoles between EEHG chicane and modulator in SATMA01 to accomidate 9 periods
+# 11) Correct position of SATDI01-DBAM
+# 12) Correct the position of SARMA01-DBCM030 which is build  before the correct 020. Idex swapped.
+# 13) Added Dechirper 100 and 200 in SATCL02
+
+# Layout 10.4.3
+# 1) Remove Dechirper in SINSB05
+# 2) Add Dechirper in S30CB15
+# 3) Add Dechirper in SATMA01
+# 4) Add Undulator in SATUN10
+# 5) Renamed quadrupole and BPM in SATUN05 to 410 and 420 indec respectively
+
+# Layout 10.4.4
+# 1) Adding SATUN09 to the current layout
+# 2) Adding Screen S20SY03-DSCR085 already to current layout.
+# 3) Splitting SATDI01 into three girder due to the stage installation of the girders. Dechirper is moved into planned phase, while modulator girder and the final matching are still in final phase.
+# 4) Adding SINBC01-DBAM060 to all phases
+# 5) Addind SATDI01-DBAM070 to all phases
+# 6) Move CDR in S20SY03 to SARCL01
+
+# Layout 10.4.5
+# 1) Complete Undulator installation in Athos
+# 2) Installation of the dechirper girder in SATDI01 for current layout
+# 3) Keep last girders in SATDI01 for final layout
+# 4) Till the modulator is not installed the BPM and Quad before the SATDI dechirper are not enabled
+# 5) The first bpm and quad on the girder after the SATDI dechirper are disabled and the names are moved to the BPM and quad directly after the dechirper
+# 6) Added first draft for FCC experiment beam line at Porthos
+
+# Layout 10.4.6
+# 1) Increased angle in Porthos-FFC arm to 3 degree for a faster separation
+
+# Layout 10.4.7
+# 1) Added CDR in SARCL01 in current phase
+# 2) Move wirescanner from SATDI01-DWSC065 to SATDI01-DWSC290
+# 3) Displace the inner dipoles of SATUN05 and SATUN14 by 149 mm
+# 4) Move the FCC experiment into S30CB15 and move the dechirper to S30CB16
+# 5) Remove differences between proto list and holy list according to email by S. Pfiffinger
+# 5a) Position SATDI01-DBAM070 for all phases
+# 5b) Position of SARCL01-DCDR105
+# 5c) SATSY03-DCDR050 moved into phase planned
+# 5d) SATUN05 Chicane moved into phase planned
+# 5e) SATDI01-DBPM090 and SATDI01-DQUA080 moved into phase planned
+# 4f) Adjust various position aorund the modulator in Athos

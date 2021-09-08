@@ -1,1 +1,2 @@
 1) Add Dechirper Container to OMType and all relevant other elements, such as OMAppTemplate etc.
+2) Change naming of module and class  (e.g. build.build())
