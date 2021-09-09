@@ -3,14 +3,14 @@
 # Press Shift+F10 to execute it or replace it with your code.
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 
-from OnlineModel import Facility
+from OnlineModel.Facility import SwissFEL
 from OnlineModel.Export.HolyList import HolyList
 
 def print_hi(name):
     # Use a breakpoint in the code line below to debug your script.
     print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
 
-    SF=Facility.SwissFEL()
+    SF=SwissFEL()
     HL=HolyList('test.xls')
     HL.append('Phase Current')
     SF.writeFacility(HL)

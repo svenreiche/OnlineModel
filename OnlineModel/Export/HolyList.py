@@ -9,6 +9,8 @@ class HolyList(ExportBase):
     It lists each element with its PV name, position in the tunnel, Baugruppe and other information.
     """
     def __init__(self, file='HolyList.xls'):
+        ExportBase.__init__(self)
+
         self.w = xlwt.Workbook()
         self.file = file  # output file name
 

@@ -1,6 +1,7 @@
 import math
 
 import OnlineModel.Layout.Macro as Macro
+
 from OnlineModel.Core.Type import TypeManager, LineContainer, VariableContainer, Alignment
 
 
@@ -18,6 +19,7 @@ class Build:
         """
         self.alt = alt
         self.Version = '10.4.7'
+
 
     def build(self):
         """

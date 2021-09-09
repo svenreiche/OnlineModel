@@ -1,23 +1,10 @@
-#from copy import deepcopy
-#from string import *
-#import math
-#import re
-#import numpy as np
-#import sys
-
 from OnlineModel.Layout.Build import Build
 from OnlineModel.Core.Type import LineContainer, Dipole, Marker
+from OnlineModel.Core.FacilityAccess import FacilityAccess
+from OnlineModel.Core.EnergyProfile import EnergyManager
+import OnlineModel.Layout.Initialization as Init
 
-
-#from OMFacilityAccess import FacilityAccess
-#from OMType import *
-#from OMEnergyManager import *
-#from OMLayout import SwissFEL
-
-#class Facility(FacilityAccess):
-
-
-class SwissFEL:
+class SwissFEL(FacilityAccess):
     """
     class to create an instance of SwissFEL - the basic entry point for the online model
     """
@@ -31,9 +18,9 @@ class SwissFEL:
         """
 
         # build layout
-        Layout=Build(alt)
-        self.PartsList = Layout.build()  # generate the lattice and return the beamlines
-        print('Initializing Lattice', Layout.Version)
+        layout = Build(alt)
+        self.PartsList = layout.build()  # generate the lattice and return the beamlines
+        print('Initializing Lattice', layout.Version)
         self.ElementDB = {}  # dictionary to hold all elements of the facility
         self.SectionDB = {}  # dictionary of subsections with 7 Letter ID  - atomic line
 
@@ -44,11 +31,17 @@ class SwissFEL:
             p[0].flatten('S', line, self.ElementDB, self.SectionDB)
             p[0] = line  # replace the current nested line container with the list of atomic subsection
 
+        # maps elements in the beamline
         self.mapping()
 
+        # set default values for elements
+        self.initialize(Init.initvalue)
+
+
 # calculate energy profile
-#        self.EM = EnergyManager()
-#       self.writeFacility(self.EM)
+        self.EM = EnergyManager()
+        self.writeFacility(self.EM)
+
 
     def mapping(self):
         """
@@ -82,6 +75,33 @@ class SwissFEL:
 
         self.foundMarker = foundMarker  # list of marker elements
         return
+
+    def initialize(self,initval):
+        """
+        Initialize elements with some basic values from the dictionary.
+        They are not necessarily the current design values
+        :param initval: dictionary with element name and value
+        :return: Nothing
+        """
+        for key in initval.keys():
+            keysplit = key.split(':')
+            name = keysplit[0].replace('-', '.')
+            field = keysplit[1]
+            val = initval[key]
+            if 'K1L' in field or 'K2L' in field:
+                L = self.getField(name, 'Length')
+                if L is None:
+                    L = 1
+                val = val/L
+                field = field[:-1].lower()
+            if 'K0L' in field:
+                field = 'angle'
+            if 'Grad' in field:
+                field = 'Gradient'
+            if 'Gap' in field or 'Offset' in field:
+                field = field.lower()
+            self.setField(name, field, val)
+
 
     def writeFacility(self, app=None, simple=0):
         """
@@ -161,32 +181,21 @@ class SwissFEL:
             line.append(sec, 0, 'relative')  # append subsection
         return line
 
-    # end of initialization
-    # ----------------------------------------------------------------------------------
-
     def isUpstream(self, a, b):
-        # Tell you if a is upstream of b.
-        try:
-            A = self.ElementDB[a]
-            Amap = A.mapping
-        except:
-            try:
-                A = self.IntegratedCorrDB[a]
-                Amap = A.mapping
-            except:
-                print('Your input element name is not in Element data base...A:', a)
-                return None
+        """
+        Check whether element A is upstream of element B
+        :param a: First element name
+        :param b: Second element name
+        :return: True or False
+        """
+        if not a in self.ElementDB.keys() or not b in self.ElementDB.keys():
+            return None
 
-        try:
-            B = self.ElementDB[b]
-            Bmap = B.mapping
-        except:
-            try:
-                B = self.IntegratedCorrDB[b]
-                Bmap = B.mapping
-            except:
-                print('Your input element name is not in Element data base...B:', b)
-                return None
+        A = self.ElementDB[a]
+        Amap = A.mapping
+
+        B = self.ElementDB[b]
+        Bmap = B.mapping
 
         if Amap[0] == Bmap[0]:  # Two elements are in the same part of the machine, easy case
             if Amap[2] < Bmap[2]:

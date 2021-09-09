@@ -1,4 +1,12 @@
 1) Add Dechirper Container to OMType and all relevant other elements, such as OMAppTemplate etc.
 2) Change naming of module and class  (e.g. build.build())
-3) Initialize the lattice with default values
-4) generate energy profile at initialization
+3) remove energy manager and do a better energy calculation (forward calculation)
+4) Import from old online model:
+ a) OMElegantLattice
+ b) OMElegant
+ c) OMElegantDistribution
+ d) OMWakes
+ e) OMDWakes
+ f) Machine Interface
+ g) Magnet Calibration
+ h) Madx Tracker
