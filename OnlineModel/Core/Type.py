@@ -533,7 +533,7 @@ class Solenoid(Magnet):
         if not ('Tag' in prop):  # prop.has_key('Tag')):
             self.__dict__.update({'Tag': 'MSOL'})
 
-    def writeElement(self, app, EM):
+    def writeElement(self, app):
         app.writeSolenoid(self)
         return self.Name
 # end of solenoid
