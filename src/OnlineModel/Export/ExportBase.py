@@ -5,7 +5,7 @@ class ExportBase:
     """
     def __init__(self):
         self.switch = 0
-        self.path = '.'
+        self.path = ''
         self.avoidPreset = 0
         self.MapIndx = []
         self.MapIndxSave = []

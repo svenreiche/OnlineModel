@@ -1,8 +1,8 @@
 import math
 
-import OnlineModel.Layout.Macro as Macro
+import src.OnlineModel.Layout.Macro as Macro
 
-from OnlineModel.Core.Type import TypeManager, LineContainer, VariableContainer, Alignment
+from src.OnlineModel.Core.Type import TypeManager, LineContainer, VariableContainer, Alignment
 
 
 class Build:

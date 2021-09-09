@@ -1,8 +1,8 @@
-from OnlineModel.Layout.Build import Build
-from OnlineModel.Core.Type import LineContainer, Dipole, Marker
-from OnlineModel.Core.FacilityAccess import FacilityAccess
-from OnlineModel.Core.EnergyProfile import EnergyManager
-import OnlineModel.Layout.Initialization as Init
+from src.OnlineModel.Layout.Build import Build
+from src.OnlineModel.Core.Type import LineContainer, Dipole, Marker
+from src.OnlineModel.Core.FacilityAccess import FacilityAccess
+from src.OnlineModel.Core.EnergyProfile import EnergyManager
+import src.OnlineModel.Layout.Initialization as Init
 
 class SwissFEL(FacilityAccess):
     """
